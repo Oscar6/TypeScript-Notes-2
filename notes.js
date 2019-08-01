@@ -12,14 +12,78 @@
 
 // Template Strings
 
-function print(name, age, profession, identifier) {
-    document.write(
-        `
-        Name: ${name}<br>
-        Age: ${age}<br>
-        Profession: ${profession}<br>
-        Identifier: ${identifier}
-        `
-    );
-}
-print("Olive", 3, "Dog", "female")
+// function print(name, age, profession, identifier) {
+//     document.write(
+//         `
+//         Name: ${name}<br>
+//         Age: ${age}<br>
+//         Profession: ${profession}<br>
+//         Identifier: ${identifier}
+//         `
+//     );
+// }
+// print("Olive", 3, "Dog", "female")
+
+
+// Data Structures: Sets
+
+// let person = new Set();
+
+// person.add('Olive');
+// person.add('Finn');
+
+// console.log(person.size + " pups");
+// person.forEach( function (e) {
+//     console.log(e);
+// })
+
+
+// For ..Of Loop
+
+// let programming = new Map();
+
+// programming.set('Olive', 'rescued golden mix');
+// programming.set('Finn', 'rescued border collie mix');
+
+
+// for (let x of programming.entries()) {
+//     console.log(x);
+// }
+
+
+// For of Coding Challenge: Loop within a loop to log character values
+
+// let sentients = ['Olive', 'Finn', 'Jenn', 'Oscar'];
+
+// for(let x of sentients) {
+//     for(let y of x) {
+//         console.log(y);
+//     }
+// }
+
+
+// Default parameters in Functions and Object Literals
+
+// var person = {
+//     name() {
+//         return 'Oscar';
+//     },
+//     age() {
+//         return 30;
+//     }
+// }
+
+// console.log(person.age());
+// console.log(person.name());
+
+
+// Arrow function syntax
+
+var person = person => console.log(person);
+
+var a = () => {
+    console.log('Arrow function works')
+};
+
+a();
+person('Anyone');
