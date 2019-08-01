@@ -79,11 +79,53 @@
 
 // Arrow function syntax
 
-var person = person => console.log(person);
+// var person = person => console.log(person);
 
-var a = () => {
-    console.log('Arrow function works')
-};
+// var a = () => {
+//     console.log('Arrow function works')
+// };
 
-a();
-person('Anyone');
+// a();
+// person('Anyone');
+
+
+// Arrow function and this scope
+
+// var probe = {
+//     name: 'voyager 1',
+//     missions: [
+//         'study solar system', 
+//         'send info', 
+//         'continue mission'
+//     ],
+//     printMissions() {
+//         this.missions.forEach((mission) => {
+//             var str = this.name + " will " + mission;
+//             console.log(str);
+//         });
+//     }
+// };
+
+// probe.printMissions()
+
+
+// Destructuring
+
+// var [first, , , last, ] = ['voyager 1', 'voyager 2', 'hubble', 'juno', 'apollo 11'];
+
+// console.log(first);
+// console.log(last);
+
+
+// Generator Functions
+
+function* myFunction(i) {
+    yield i;
+    console.log(i + " Your message is being logged");
+    yield i + 5;
+}
+
+var gen = myFunction(10);
+
+console.log(gen.next());
+console.log(gen.next());
