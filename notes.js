@@ -119,13 +119,51 @@
 
 // Generator Functions
 
-function* myFunction(i) {
-    yield i;
-    console.log(i + " Your message is being logged");
-    yield i + 5;
+// function* myFunction(i) {
+//     yield i;
+//     console.log(i + " Your message is being logged");
+//     yield i + 5;
+// }
+
+// var gen = myFunction(10);
+
+// console.log(gen.next());
+// console.log(gen.next());
+
+
+// Classes
+
+class person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
 }
 
-var gen = myFunction(10);
+class student extends person {
+    constructor(name, age, school, grade) {
+        super(name, age);
+        this.school = school;
+        this.grade = grade;
+    }
 
-console.log(gen.next());
-console.log(gen.next());
+getName(){return this.name}
+setName(name){this.name = name}
+
+getAge(){return this.age}
+setAge(age){this.age = age}
+
+getSchool(){return this.school}
+setSchool(school){this.school = school}
+
+getCalculateGrade() {
+    let totalPoints = 100;
+    let studentPoints = this.getAge();
+    let result;
+
+    result = totalPoints - studentPoints;
+    return result;
+    }
+}
+
+let olive = new student('Olive', 3, 'Space Camp', 'Astronaut');
