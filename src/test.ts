@@ -119,26 +119,41 @@
     // log(buildName('Olive'));
 
 
-// Interface
+// Interfaces
 
-    function log(val: any): void {
-        console.log(val);
-    }
+    // function log(val: any): void {
+    //     console.log(val);
+    // }
 
-    interface IComplexType {
+    // interface IComplexType {
+    //     id: number;
+    //     name?: string;
+    // }
+
+    // let complexType : IComplexType = {id: 1};
+
+    // interface Point {
+    //     readonly x: number;
+    //     readonly y: number;
+    // }
+
+    // let p1: Point = { x: 2, y: 2};
+
+    // p1.x = 6;
+    // p1.y = 7;
+
+    // log(p1);
+
+
+// Classes
+
+    class SimpleClass {
         id: number;
-        name?: string;
+        print() : void {
+            console.log(`SimpleClass has id: ${this.id}`);
+        }
     }
 
-    let complexType : IComplexType = {id: 1};
-
-    interface Point {
-        x: number;
-        y: number;
-    }
-
-    let p1: Point = { x: 2, y: 2};
-
-    p1.x = 6;
-
-    log(p1);
+    let mySimpleClass = new SimpleClass();
+    mySimpleClass.id = 10101999;
+    mySimpleClass.print();

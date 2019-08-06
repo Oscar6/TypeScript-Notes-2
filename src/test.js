@@ -75,11 +75,32 @@
 // let personOne = buildPerson(firstname: 'john', remainingName: 'steve', 'paul', 'daniel', 'james');
 // log(personOne);
 // log(buildName('Olive'));
-// Interface
-function log(val) {
-    console.log(val);
-}
-var complexType = { id: 1 };
-var p1 = { x: 2, y: 2 };
-p1.x = 6;
-log(p1);
+// Interfaces
+// function log(val: any): void {
+//     console.log(val);
+// }
+// interface IComplexType {
+//     id: number;
+//     name?: string;
+// }
+// let complexType : IComplexType = {id: 1};
+// interface Point {
+//     readonly x: number;
+//     readonly y: number;
+// }
+// let p1: Point = { x: 2, y: 2};
+// p1.x = 6;
+// p1.y = 7;
+// log(p1);
+// Classes
+var SimpleClass = /** @class */ (function () {
+    function SimpleClass() {
+    }
+    SimpleClass.prototype.print = function () {
+        console.log("SimpleClass has id: " + this.id);
+    };
+    return SimpleClass;
+}());
+var mySimpleClass = new SimpleClass();
+mySimpleClass.id = 10101999;
+mySimpleClass.print();
