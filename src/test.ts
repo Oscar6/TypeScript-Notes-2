@@ -1,33 +1,34 @@
 // Basic Types
 
-// let namess: array = ['Olive', 'Finn', 2, true];
+    // let namess: array = ['Olive', 'Finn', 2, true];
 
-// let persons: string = 'Steve';
+    // let persons: string = 'Steve';
 
-// let heightInCentimeters: number = 182.121212;
+    // let heightInCentimeters: number = 182.121212;
 
-// let names: string[] = ['Olive', 'Finn', 'C3P0', '6', 'Engineer'];
+    // let names: string[] = ['Olive', 'Finn', 'C3P0', '6', 'Engineer'];
 
-// let numtest: number[] = [6, 12, 6, 8];
+    // let numtest: number[] = [6, 12, 6, 8];
 
-// let booltest: boolean[] = [true, false, false];
+    // let booltest: boolean[] = [true, false, false];
 
 // Basic Types 2
 
-// let tupleTest: [string, number, boolean] = ['Olive', 4, true];
+    // let tupleTest: [string, number, boolean] = ['Olive', 4, true];
 
-// enum DoorStats {
-//     Open,
-//     Closed,
-//     Ajar
-// }
+    // enum DoorStats {
+    //     Open,
+    //     Closed,
+    //     Ajar
+    // }
 
-// function log(val: any) {
-//     console.log(val);
-// }
+    // function log(val: any) {
+    //     console.log(val);
+    // }
 
-// log(DoorStats.Open);
-// log(DoorStats[0]);
+    // log(DoorStats.Open);
+    // log(DoorStats[0]);
+
 
 // Advanced Types;
 
@@ -81,36 +82,63 @@
     //     return(a + b).toString();
     // }
 
+
 // TypeScript Functions 2
 
-function log(val: any): void {console.log(val)}
+    // function log(val: any): void {console.log(val)}
 
-// function addNumbers(a: number, b: number) : string {
-//     return(a + b).toString();
-// }
+    // function addNumbers(a: number, b: number) : string {
+    //     return(a + b).toString();
+    // }
 
-// var addString = function (a: string, b?: string) {
-//     return a + b;
-// };
+    // var addString = function (a: string, b?: string) {
+    //     return a + b;
+    // };
 
-// log(addString('Olive ', 'Dog'));
+    // log(addString('Olive ', 'Dog'));
+
 
 // Default and Rest Parameters
-// function buildName(firstName: string, lastname: string = 'Dog')
-// function buildName(firstName: string, lastname: number = 6) 
-function buildName(firstName: string, lastname: boolean = true) {
-    return firstName + " " + lastname;
-}
+    // function buildName(firstName: string, lastname: string = 'Dog')
+    // function buildName(firstName: string, lastname: number = 6) 
+    // function buildName(firstname: string, lastname: boolean = true) {
+    //     return firstname + " " + lastname;
+    // }
 
-// log(buildName('Olive'));
+    // log(buildName('Olive'));
 
 // Rest Parameter
-function buildPerson(firstname: string, ...remainingName: string[]) {
-    return firstname + " " + remainingName.join(" ");
-}
+    // function buildPerson(firstname: string, ...remainingName: string[]) {
+    //     return firstname + " " + remainingName.join(" ");
+    // }
 
-let personOne = buildPerson(firstname: 'john', remainingName: 'steve', 'paul', 'daniel', 'james');
+    // let personOne = buildPerson(firstname: 'john', remainingName: 'steve', 'paul', 'daniel', 'james');
 
-log(personOne);
+    // log(personOne);
 
-log(buildName('Olive'));
+    // log(buildName('Olive'));
+
+
+// Interface
+
+    function log(val: any): void {
+        console.log(val);
+    }
+
+    interface IComplexType {
+        id: number;
+        name?: string;
+    }
+
+    let complexType : IComplexType = {id: 1};
+
+    interface Point {
+        x: number;
+        y: number;
+    }
+
+    let p1: Point = { x: 2, y: 2};
+
+    p1.x = 6;
+
+    log(p1);

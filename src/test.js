@@ -53,7 +53,7 @@
 //     return(a + b).toString();
 // }
 // TypeScript Functions 2
-function log(val) { console.log(val); }
+// function log(val: any): void {console.log(val)}
 // function addNumbers(a: number, b: number) : string {
 //     return(a + b).toString();
 // }
@@ -64,19 +64,22 @@ function log(val) { console.log(val); }
 // Default and Rest Parameters
 // function buildName(firstName: string, lastname: string = 'Dog')
 // function buildName(firstName: string, lastname: number = 6) 
-function buildName(firstName, lastname) {
-    if (lastname === void 0) { lastname = true; }
-    return firstName + " " + lastname;
-}
+// function buildName(firstname: string, lastname: boolean = true) {
+//     return firstname + " " + lastname;
+// }
 // log(buildName('Olive'));
 // Rest Parameter
-function buildPerson(firstname) {
-    var remainingName = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        remainingName[_i - 1] = arguments[_i];
-    }
-    return firstname + " " + remainingName.join(" ");
+// function buildPerson(firstname: string, ...remainingName: string[]) {
+//     return firstname + " " + remainingName.join(" ");
+// }
+// let personOne = buildPerson(firstname: 'john', remainingName: 'steve', 'paul', 'daniel', 'james');
+// log(personOne);
+// log(buildName('Olive'));
+// Interface
+function log(val) {
+    console.log(val);
 }
-var personOne = buildPerson(firstname, 'john', remainingName, 'steve', 'paul', 'daniel', 'james');
-log(personOne);
-log(buildName('Olive'));
+var complexType = { id: 1 };
+var p1 = { x: 2, y: 2 };
+p1.x = 6;
+log(p1);
