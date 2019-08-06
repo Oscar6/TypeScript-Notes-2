@@ -131,7 +131,11 @@ var ClassWithConstructor = /** @class */ (function () {
     ClassWithConstructor.prototype.getName = function () {
         return this.name;
     };
+    ClassWithConstructor.prototype.getId = function () {
+        return this.id;
+    };
     return ClassWithConstructor;
 }());
 var classWithConstructor = new ClassWithConstructor(10, 'Apple');
 console.log(classWithConstructor.getName());
+console.log(classWithConstructor.getId());

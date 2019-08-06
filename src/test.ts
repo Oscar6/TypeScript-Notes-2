@@ -188,19 +188,24 @@
 
 // Class Constructor Function
 
-    // class ClassWithConstructor {
-    //     id: number;
-    //     name: string;
+    class ClassWithConstructor {
+        id: number;
+        name: string;
 
-    //     constructor(_id: number, _name: string) {
-    //         this.id = _id;
-    //         this.name = _name;
-    //     }
+        constructor(_id: number, _name: string) {
+            this.id = _id;
+            this.name = _name;
+        }
 
-    //     getName(): string {
-    //         return this.name;
-    //     }
-    // }
+        getName(): string {
+            return this.name;
+        }
 
-    // var classWithConstructor = new ClassWithConstructor(10, 'Apple');
-    // console.log(classWithConstructor.getName());
+        getId(): number {
+            return this.id;
+        }
+    }
+
+    var classWithConstructor = new ClassWithConstructor(10, 'Apple');
+    console.log(classWithConstructor.getName());
+    console.log(classWithConstructor.getId());
