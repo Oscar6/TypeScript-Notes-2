@@ -147,13 +147,60 @@
 
 // Classes
 
-    class SimpleClass {
-        id: number;
-        print() : void {
-            console.log(`SimpleClass has id: ${this.id}`);
-        }
-    }
+    // class SimpleClass {
+    //     id: number;
+    //     print() : void {
+    //         console.log(`SimpleClass has id: ${this.id}`);
+    //     }
+    // }
 
-    let mySimpleClass = new SimpleClass();
-    mySimpleClass.id = 10101999;
-    mySimpleClass.print();
+    // let mySimpleClass = new SimpleClass();
+    // mySimpleClass.id = 10101999;
+    // mySimpleClass.print();
+
+
+// Implementing Interfaces
+
+    // interface Print{
+    //     print();
+    // }
+
+    // function printClass(a: IPrint){
+    //     a.print();
+    // }
+
+    // class ClassA implements IPrint{
+    //     print(){
+    //         console.log('ClassA.print()');
+    //     }
+    // }
+
+    // class ClassB implements IPrint{
+    //     print(){
+    //         console.log('ClassB.print()');
+    //     }
+    // }
+
+    // let classA = new ClassA();
+    // classA.print();
+    // let classB = new ClassB();
+
+
+// Class Constructor Function
+
+    // class ClassWithConstructor {
+    //     id: number;
+    //     name: string;
+
+    //     constructor(_id: number, _name: string) {
+    //         this.id = _id;
+    //         this.name = _name;
+    //     }
+
+    //     getName(): string {
+    //         return this.name;
+    //     }
+    // }
+
+    // var classWithConstructor = new ClassWithConstructor(10, 'Apple');
+    // console.log(classWithConstructor.getName());

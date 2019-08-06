@@ -93,14 +93,45 @@
 // p1.y = 7;
 // log(p1);
 // Classes
-var SimpleClass = /** @class */ (function () {
-    function SimpleClass() {
+// class SimpleClass {
+//     id: number;
+//     print() : void {
+//         console.log(`SimpleClass has id: ${this.id}`);
+//     }
+// }
+// let mySimpleClass = new SimpleClass();
+// mySimpleClass.id = 10101999;
+// mySimpleClass.print();
+// Implementing Interfaces
+// interface Print{
+//     print();
+// }
+// function printClass(a: IPrint){
+//     a.print();
+// }
+// class ClassA implements IPrint{
+//     print(){
+//         console.log('ClassA.print()');
+//     }
+// }
+// class ClassB implements IPrint{
+//     print(){
+//         console.log('ClassB.print()');
+//     }
+// }
+// let classA = new ClassA();
+// classA.print();
+// let classB = new ClassB();
+// Class Constructor Function
+var ClassWithConstructor = /** @class */ (function () {
+    function ClassWithConstructor(_id, _name) {
+        this.id = _id;
+        this.name = _name;
     }
-    SimpleClass.prototype.print = function () {
-        console.log("SimpleClass has id: " + this.id);
+    ClassWithConstructor.prototype.getName = function () {
+        return this.name;
     };
-    return SimpleClass;
+    return ClassWithConstructor;
 }());
-var mySimpleClass = new SimpleClass();
-mySimpleClass.id = 10101999;
-mySimpleClass.print();
+var classWithConstructor = new ClassWithConstructor(10, 'Apple');
+console.log(classWithConstructor.getName());
