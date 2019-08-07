@@ -384,3 +384,79 @@
 
     // let frontDoor = DoorState.Closed;
     // console.log(`Front Door is: ${frontDoor}`)
+
+
+// Introduction Modules
+
+    // export class abc {
+    //     a: string;
+    //     b: string;
+
+    //     constructor(private _a: string, private _b: string) {
+    //         this.a = _a;
+    //         this.b = _b;
+    //     }
+    // }
+
+    // Importing file above to modules file
+
+    // import {abc} from "./modules";
+
+    // let myABC = new abc(_a: 'abc1', _b: 'abc2');
+
+// Import and Export Modules (as)
+
+    // Module File
+
+        // import * as mods from "./modules";
+
+        // let myClass1 = new mods.abc(_a: 'hello', _b: 'world');
+
+        // let myClass2 = new mods.onetwothree('hello', 'hello');
+
+    // Exporting File
+        // class abc {
+        //     a: string;
+        //     b: string;
+
+        //     constructor(private _a: string, private _b: string) {
+        //         this.a = _a;
+        //         this.b = _b;
+        //     }
+        // }
+
+        // class onetwothree {
+        //     a: string;
+        //     b: string;
+
+        //     constructor(private _a: string, private _b: string) {
+        //         this.a = _a;
+        //         this.b = _b;
+        //     }
+        // }
+
+        // export { abc }; // rename: export { abc as class1 };
+        // export { onetwothree }; // rename: export { abc as class2 };
+
+
+// Namespaces
+
+    namespace FirstNameSpace {
+        class NotExported {
+    
+        }
+        export class NameSpaceClass {
+            id: number;
+        }
+    }
+
+    namespace SecondNameSpace {
+        export class NameSpaceClass {
+            name: string;
+        }
+    }
+
+    let firstNameSpace = new FirstNameSpace.NameSpaceClass();
+    let notExported = new FirstNameSpace.NotExported();
+
+    let secondNameSpace = new SecondNameSpace.NameSpaceClass();
