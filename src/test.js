@@ -1,17 +1,4 @@
 // Basic Types
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 // let namess: array = ['Olive', 'Finn', 2, true];
 // let persons: string = 'Steve';
 // let heightInCentimeters: number = 182.121212;
@@ -222,41 +209,61 @@ var __extends = (this && this.__extends) || (function () {
 // derivedFromProtected.id = 1;
 // console.log(`getID returns ${derivedFromProtected.getId()}`);
 // Abstract Classes
-var AbstractEmployee = /** @class */ (function () {
-    function AbstractEmployee() {
-    }
-    AbstractEmployee.prototype.printDetails = function () {
-        console.log(this.getDetails());
-    };
-    return AbstractEmployee;
-}());
-var NewEmployee = /** @class */ (function (_super) {
-    __extends(NewEmployee, _super);
-    function NewEmployee() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    NewEmployee.prototype.getDetails = function () {
-        return "id: " + this.id + ", name: " + this.name;
-    };
-    return NewEmployee;
-}(AbstractEmployee));
-var NewManager = /** @class */ (function (_super) {
-    __extends(NewManager, _super);
-    function NewManager() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    NewManager.prototype.getDetails = function () {
-        return _super.prototype.getDetails.call(this) + (", Employee Count " + this.Employees.length);
-    };
-    ;
-    return NewManager;
-}(NewEmployee));
-var employee = new NewEmployee();
-employee.id = 1;
-employee.name = "Employee Name";
-employee.printDetails();
-var manager = new NewManager();
-manager.id = 2;
-manager.name = "New Manager";
-manager.Employees = new Array();
-manager.printDetails();
+// abstract class AbstractEmployee {
+//     public id: number;
+//     public name: string;
+//     abstract getDetails(): string;
+//     public printDetails() {
+//         console.log(this.getDetails());
+//     }
+// }
+// class NewEmployee extends AbstractEmployee {
+//     getDetails(): string {
+//         return `id: ${this.id}, name: ${this.name}`
+//     }
+// }
+// class NewManager extends NewEmployee {
+//     public Employees: NewEmployees[];
+//     getDetails(): string {
+//         return super.getDetails() + `, Employee Count ${this.Employees.length}`
+//     };
+// }
+// let employee = new NewEmployee();
+// employee.id = 1;
+// employee.name = "Employee Name";
+// employee.printDetails();
+// let manager = new NewManager();
+// manager.id = 2;
+// manager.name = "New Manager";
+// manager.Employees = new Array();
+// manager.printDetails();
+// Generics
+// function identity(args: number):number {
+//     return args:
+// }
+// function identity1(args: any): any {
+//     return args;
+// }
+// Define Generic function
+// function identity<T>(arg: T):T {
+//     return arg;
+// }
+// let a = identity(arg: "myString");
+// let b = identity<boolean>(arg: true);
+// Generic Interface
+// interface GenericInterface<T> {
+//     (arg: T): T;
+// }
+// class GenericClass<T> {
+//     zeroValue: T;
+//     add: (x: T, y: T) => T;
+// }
+// Enum
+var DoorState;
+(function (DoorState) {
+    DoorState[DoorState["Open"] = 0] = "Open";
+    DoorState[DoorState["Closed"] = 1] = "Closed";
+    DoorState[DoorState["Ajar"] = 2] = "Ajar";
+})(DoorState || (DoorState = {}));
+var frontDoor = DoorState.Closed;
+console.log("Front Door is: " + frontDoor);

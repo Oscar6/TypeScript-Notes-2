@@ -309,35 +309,78 @@
 
 // Abstract Classes
 
-    abstract class AbstractEmployee {
-        public id: number;
-        public name: string;
-        abstract getDetails(): string;
-        public printDetails() {
-            console.log(this.getDetails());
-        }
-    }
+    // abstract class AbstractEmployee {
+    //     public id: number;
+    //     public name: string;
+    //     abstract getDetails(): string;
+    //     public printDetails() {
+    //         console.log(this.getDetails());
+    //     }
+    // }
 
-    class NewEmployee extends AbstractEmployee {
-        getDetails(): string {
-            return `id: ${this.id}, name: ${this.name}`
-        }
-    }
+    // class NewEmployee extends AbstractEmployee {
+    //     getDetails(): string {
+    //         return `id: ${this.id}, name: ${this.name}`
+    //     }
+    // }
 
-    class NewManager extends NewEmployee {
-        public Employees: NewEmployees[];
-        getDetails(): string {
-            return super.getDetails() + `, Employee Count ${this.Employees.length}`
-        };
-    }
+    // class NewManager extends NewEmployee {
+    //     public Employees: NewEmployees[];
+    //     getDetails(): string {
+    //         return super.getDetails() + `, Employee Count ${this.Employees.length}`
+    //     };
+    // }
 
-    let employee = new NewEmployee();
-    employee.id = 1;
-    employee.name = "Employee Name";
-    employee.printDetails();
+    // let employee = new NewEmployee();
+    // employee.id = 1;
+    // employee.name = "Employee Name";
+    // employee.printDetails();
 
-    let manager = new NewManager();
-    manager.id = 2;
-    manager.name = "New Manager";
-    manager.Employees = new Array();
-    manager.printDetails();
+    // let manager = new NewManager();
+    // manager.id = 2;
+    // manager.name = "New Manager";
+    // manager.Employees = new Array();
+    // manager.printDetails();
+
+
+// Generics
+
+    // function identity(args: number):number {
+    //     return args:
+    // }
+
+    // function identity1(args: any): any {
+    //     return args;
+    // }
+
+    // Define Generic function
+        // function identity<T>(arg: T):T {
+        //     return arg;
+        // }
+
+        // let a = identity(arg: "myString");
+
+        // let b = identity<boolean>(arg: true);
+
+
+// Generic Interface
+
+    // interface GenericInterface<T> {
+    //     (arg: T): T;
+    // }
+
+    // class GenericClass<T> {
+    //     zeroValue: T;
+    //     add: (x: T, y: T) => T;
+    // }
+
+// Enum
+
+    // enum DoorState {
+    //     Open,
+    //     Closed,
+    //     Ajar
+    // }
+
+    // let frontDoor = DoorState.Closed;
+    // console.log(`Front Door is: ${frontDoor}`)
