@@ -234,33 +234,110 @@
 
 
 // Static Modifier
-    class ClassWithPrivateProperty {
-        private _id: number;
-        private _name: string;
-        static _hobby: string = 'Static property is being logged';
+    // class ClassWithPrivateProperty {
+    //     private _id: number;
+    //     private _name: string;
+    //     static _hobby: string = 'Static property is being logged';
 
-        static printData(): void {
-            console.log(this._hobby);
-        }
+    //     static printData(): void {
+    //         console.log(this._hobby);
+    //     }
 
-        get name(): string {
-            return this._name;
-        }
+    //     get name(): string {
+    //         return this._name;
+    //     }
 
-        set name(value: string) {
-            this._name = value;
-        }
+    //     set name(value: string) {
+    //         this._name = value;
+    //     }
 
-        get id(): number {
-            return this._id;
-        }
+    //     get id(): number {
+    //         return this._id;
+    //     }
 
-        set id(value: number) {
-            this._id = value;
-        }
-    }
+    //     set id(value: number) {
+    //         this._id = value;
+    //     }
+    // }
 
     // ClassWithPrivateProperty._hobby = 'playing video games';
     // console.log(ClassWithPrivateProperty._hobby);
 
-    ClassWithPrivateProperty.printData();
+    // ClassWithPrivateProperty.printData();
+
+
+// Class and Interface Inheritance
+
+    // class BaseClassWithConstructor {
+    //     private id: number;
+    //     constructor(_id: number) {
+    //         this.id = _id;
+    //     }
+    // }
+
+    // class DerivedClassWithConstructor extends BaseClassWithConstructor {
+    //     private name: string;
+    //     constructor(_id:number, _name: string) {
+    //         super(_id);
+    //         this.name = _name;
+    //     }
+    // }
+
+
+// Protected Class Members
+
+    // class ClassUsingProtected {
+    //     protected id: number;
+
+    //     public getId() {
+    //         return this.id;
+    //     }
+    // }
+
+    // class DerivedFromProtected extends ClassUsingProtected {
+    //     constructor() {
+    //         super();
+    //         this.id = 0;
+
+    //     }
+    // }
+
+    // var derivedFromProtected = new DerivedFromProtected();
+    // derivedFromProtected.id = 1;
+    // console.log(`getID returns ${derivedFromProtected.getId()}`);
+
+
+// Abstract Classes
+
+    abstract class AbstractEmployee {
+        public id: number;
+        public name: string;
+        abstract getDetails(): string;
+        public printDetails() {
+            console.log(this.getDetails());
+        }
+    }
+
+    class NewEmployee extends AbstractEmployee {
+        getDetails(): string {
+            return `id: ${this.id}, name: ${this.name}`
+        }
+    }
+
+    class NewManager extends NewEmployee {
+        public Employees: NewEmployees[];
+        getDetails(): string {
+            return super.getDetails() + `, Employee Count ${this.Employees.length}`
+        };
+    }
+
+    let employee = new NewEmployee();
+    employee.id = 1;
+    employee.name = "Employee Name";
+    employee.printDetails();
+
+    let manager = new NewManager();
+    manager.id = 2;
+    manager.name = "New Manager";
+    manager.Employees = new Array();
+    manager.printDetails();

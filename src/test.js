@@ -1,4 +1,17 @@
 // Basic Types
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // let namess: array = ['Olive', 'Finn', 2, true];
 // let persons: string = 'Steve';
 // let heightInCentimeters: number = 182.121212;
@@ -155,35 +168,95 @@
 // console.log(`myAutoClass id: ${myAutoClass.id}`);
 // console.log(`myAutoClass name: ${myAutoClass.name}`);
 // Static Modifier
-var ClassWithPrivateProperty = /** @class */ (function () {
-    function ClassWithPrivateProperty() {
-    }
-    ClassWithPrivateProperty.printData = function () {
-        console.log(this._hobby);
-    };
-    Object.defineProperty(ClassWithPrivateProperty.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (value) {
-            this._name = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ClassWithPrivateProperty.prototype, "id", {
-        get: function () {
-            return this._id;
-        },
-        set: function (value) {
-            this._id = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ClassWithPrivateProperty._hobby = 'Static property is being logged';
-    return ClassWithPrivateProperty;
-}());
+// class ClassWithPrivateProperty {
+//     private _id: number;
+//     private _name: string;
+//     static _hobby: string = 'Static property is being logged';
+//     static printData(): void {
+//         console.log(this._hobby);
+//     }
+//     get name(): string {
+//         return this._name;
+//     }
+//     set name(value: string) {
+//         this._name = value;
+//     }
+//     get id(): number {
+//         return this._id;
+//     }
+//     set id(value: number) {
+//         this._id = value;
+//     }
+// }
 // ClassWithPrivateProperty._hobby = 'playing video games';
 // console.log(ClassWithPrivateProperty._hobby);
-ClassWithPrivateProperty.printData();
+// ClassWithPrivateProperty.printData();
+// Class and Interface Inheritance
+// class BaseClassWithConstructor {
+//     private id: number;
+//     constructor(_id: number) {
+//         this.id = _id;
+//     }
+// }
+// class DerivedClassWithConstructor extends BaseClassWithConstructor {
+//     private name: string;
+//     constructor(_id:number, _name: string) {
+//         super(_id);
+//         this.name = _name;
+//     }
+// }
+// Protected Class Members
+// class ClassUsingProtected {
+//     protected id: number;
+//     public getId() {
+//         return this.id;
+//     }
+// }
+// class DerivedFromProtected extends ClassUsingProtected {
+//     constructor() {
+//         super();
+//         this.id = 0;
+//     }
+// }
+// var derivedFromProtected = new DerivedFromProtected();
+// derivedFromProtected.id = 1;
+// console.log(`getID returns ${derivedFromProtected.getId()}`);
+// Abstract Classes
+var AbstractEmployee = /** @class */ (function () {
+    function AbstractEmployee() {
+    }
+    AbstractEmployee.prototype.printDetails = function () {
+        console.log(this.getDetails());
+    };
+    return AbstractEmployee;
+}());
+var NewEmployee = /** @class */ (function (_super) {
+    __extends(NewEmployee, _super);
+    function NewEmployee() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    NewEmployee.prototype.getDetails = function () {
+        return "id: " + this.id + ", name: " + this.name;
+    };
+    return NewEmployee;
+}(AbstractEmployee));
+var NewManager = /** @class */ (function (_super) {
+    __extends(NewManager, _super);
+    function NewManager() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    NewManager.prototype.getDetails = function () {
+        return _super.prototype.getDetails.call(this) + (", Employee Count " + this.Employees.length);
+    };
+    ;
+    return NewManager;
+}(NewEmployee));
+var employee = new NewEmployee();
+employee.id = 1;
+employee.name = "Employee Name";
+employee.printDetails();
+var manager = new NewManager();
+manager.id = 2;
+manager.name = "New Manager";
+manager.Employees = new Array();
+manager.printDetails();
