@@ -188,24 +188,79 @@
 
 // Class Constructor Function
 
-    class ClassWithConstructor {
-        id: number;
-        name: string;
+    // class ClassWithConstructor {
+    //     id: number;
+    //     name: string;
 
-        constructor(_id: number, _name: string) {
-            this.id = _id;
-            this.name = _name;
+    //     constructor(_id: number, _name: string) {
+    //         this.id = _id;
+    //         this.name = _name;
+    //     }
+
+    //     getName(): string {
+    //         return this.name;
+    //     }
+
+    //     getId(): number {
+    //         return this.id;
+    //     }
+    // }
+
+    // var classWithConstructor = new ClassWithConstructor(10, 'Apple');
+    // console.log(classWithConstructor.getName());
+    // console.log(classWithConstructor.getId());
+
+
+// Class Modifiers
+
+    // class ClassWithPublicProperty {
+    //     public id: number;
+    // }
+
+    // let publicAccess = new ClassWithPublicProperty();
+    // publicAccess.id = 20;
+
+    // console.log(publicAccess);
+
+    // class classWithAutomaticProperties {
+    //     constructor(public id: number, private name: string) {
+
+    //     }
+    // }
+
+    // let myAutoClass = new classWithAutomaticProperties( id: 1, name: 'ClassName');
+    // console.log(`myAutoClass id: ${myAutoClass.id}`);
+    // console.log(`myAutoClass name: ${myAutoClass.name}`);
+
+
+// Static Modifier
+    class ClassWithPrivateProperty {
+        private _id: number;
+        private _name: string;
+        static _hobby: string = 'Static property is being logged';
+
+        static printData(): void {
+            console.log(this._hobby);
         }
 
-        getName(): string {
-            return this.name;
+        get name(): string {
+            return this._name;
         }
 
-        getId(): number {
-            return this.id;
+        set name(value: string) {
+            this._name = value;
+        }
+
+        get id(): number {
+            return this._id;
+        }
+
+        set id(value: number) {
+            this._id = value;
         }
     }
 
-    var classWithConstructor = new ClassWithConstructor(10, 'Apple');
-    console.log(classWithConstructor.getName());
-    console.log(classWithConstructor.getId());
+    // ClassWithPrivateProperty._hobby = 'playing video games';
+    // console.log(ClassWithPrivateProperty._hobby);
+
+    ClassWithPrivateProperty.printData();

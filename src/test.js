@@ -123,19 +123,67 @@
 // classA.print();
 // let classB = new ClassB();
 // Class Constructor Function
-var ClassWithConstructor = /** @class */ (function () {
-    function ClassWithConstructor(_id, _name) {
-        this.id = _id;
-        this.name = _name;
+// class ClassWithConstructor {
+//     id: number;
+//     name: string;
+//     constructor(_id: number, _name: string) {
+//         this.id = _id;
+//         this.name = _name;
+//     }
+//     getName(): string {
+//         return this.name;
+//     }
+//     getId(): number {
+//         return this.id;
+//     }
+// }
+// var classWithConstructor = new ClassWithConstructor(10, 'Apple');
+// console.log(classWithConstructor.getName());
+// console.log(classWithConstructor.getId());
+// Class Modifiers
+// class ClassWithPublicProperty {
+//     public id: number;
+// }
+// let publicAccess = new ClassWithPublicProperty();
+// publicAccess.id = 20;
+// console.log(publicAccess);
+// class classWithAutomaticProperties {
+//     constructor(public id: number, private name: string) {
+//     }
+// }
+// let myAutoClass = new classWithAutomaticProperties( id: 1, name: 'ClassName');
+// console.log(`myAutoClass id: ${myAutoClass.id}`);
+// console.log(`myAutoClass name: ${myAutoClass.name}`);
+// Static Modifier
+var ClassWithPrivateProperty = /** @class */ (function () {
+    function ClassWithPrivateProperty() {
     }
-    ClassWithConstructor.prototype.getName = function () {
-        return this.name;
+    ClassWithPrivateProperty.printData = function () {
+        console.log(this._hobby);
     };
-    ClassWithConstructor.prototype.getId = function () {
-        return this.id;
-    };
-    return ClassWithConstructor;
+    Object.defineProperty(ClassWithPrivateProperty.prototype, "name", {
+        get: function () {
+            return this._name;
+        },
+        set: function (value) {
+            this._name = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClassWithPrivateProperty.prototype, "id", {
+        get: function () {
+            return this._id;
+        },
+        set: function (value) {
+            this._id = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ClassWithPrivateProperty._hobby = 'Static property is being logged';
+    return ClassWithPrivateProperty;
 }());
-var classWithConstructor = new ClassWithConstructor(10, 'Apple');
-console.log(classWithConstructor.getName());
-console.log(classWithConstructor.getId());
+// ClassWithPrivateProperty._hobby = 'playing video games';
+// console.log(ClassWithPrivateProperty._hobby);
+ClassWithPrivateProperty.printData();
