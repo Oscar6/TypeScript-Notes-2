@@ -176,3 +176,9 @@
 
     // TSLint Setup Tutorial
      // https://youtu.be/_QAbWfcCaKc?t=1783
+
+     // Download in VS Code
+     // Install:
+        // tslint --init
+        // npm install -g tslint
+        
